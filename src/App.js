@@ -16,7 +16,7 @@ export default class App extends Component {
   getJobs = () => {
     fetch(this.state.baseURL + '/jobs/')
     .then (response => {
-      console.log(response)
+      // console.log(response)
       if (response.status === 200) {
         return response.json() 
       } else {
@@ -34,7 +34,7 @@ export default class App extends Component {
   getConferences = () => {
     fetch(this.state.baseURL + '/conferences/')
     .then (response => {
-      console.log(response)
+      // console.log(response)
       if (response.status === 200) {
         return response.json() 
       } else {
