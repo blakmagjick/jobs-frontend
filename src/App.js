@@ -39,7 +39,7 @@ export default class App extends Component {
         <header className="App-header">
           <h1>Job Tracker</h1>
         </header>
-        <JobApps />
+        <JobApps jobs={this.state.jobs} />
       </div>
     )
   }
