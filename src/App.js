@@ -61,7 +61,7 @@ export default class App extends Component {
           <h1>Job Tracker</h1>
         </header>
         <JobApps jobs={this.state.jobs} />
-        <Conferences />
+        <Conferences conferences={this.state.conferences}/>
       </div>
     )
   }
