@@ -24,7 +24,7 @@ export default class App extends Component {
     .then(body => {
       console.log(body)
       this.setState({
-        // jobs: body
+        jobs: body
       })
     })
   }
@@ -34,7 +34,6 @@ export default class App extends Component {
   }
 
   render() {
-    // console.log(this.state.jobs)
     return (
       <div className="App">
         <header className="App-header">
