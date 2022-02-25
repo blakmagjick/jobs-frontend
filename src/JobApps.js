@@ -1,16 +1,15 @@
 import React from 'react';
-// import './App.css';
 
 export default function JobApps (props) {
     return (
         <React.Fragment>
-            <h3>Applied to Jobs</h3>
+            <h2>Applied to Jobs</h2>
             {props.jobs.map((job, i) => {
                 return (
                     <div key={i}>
-                    <p>Company Name: {job.companyName} <br />
-                    Job Title: {job.jobTitle} <br />
-                    Notes: {job.notes}</p>
+                    <p><span className='title'>Company Name</span>: {job.companyName} <br />
+                    <span className='title'>Job Title</span>: {job.jobTitle} <br />
+                    <span className='title'>Notes</span>: {job.notes}</p>
                     </div>
                 )
             })}
