@@ -7,7 +7,7 @@ export default function JobApps (props) {
             {props.jobs.map((job, i) => {
                 return (
                     <div key={i}>
-                    <p><span className='title'>Company Name</span>: {job.companyName} <br />
+                    <p><span className='title'>Company Name</span>: <span className='bolded'>{job.companyName}</span> <br />
                     <span className='title'>Job Title</span>: {job.jobTitle} <br />
                     <span className='title'>Notes</span>: {job.notes}</p>
                     </div>
