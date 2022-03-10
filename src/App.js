@@ -3,6 +3,7 @@ import Conferences from './Conferences.js'
 import JobApps from './JobApps.js';
 import Interviews from './Interviews.js';
 import React, { Component } from 'react';
+import { Outlet, Link } from 'react-router-dom';
 
 export default class App extends Component {
   constructor() {
@@ -77,13 +78,25 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
+      <div>
+        <h1> Job Tracker </h1>
+        <nav
+          style ={{
+            borderBottom: 'solid 1px',
+            paddingBottom: '1rem',
+          }}
+        >
+          <Link to='/conferences' conferences={this.state.conferences}>Conferences</Link> | {" "}
+          <Link to='/interviews' interviews={this.state.interviews}>Interviews</Link> | {" "}
+          <Link to='/jobs' jobs={this.state.jobs}>Jobs</Link>
+        </nav>
+        <Outlet />
+        {/* <header className="App-header">
           <h1>Job Tracker</h1>
         </header>
         <JobApps jobs={this.state.jobs} />
         <Conferences conferences={this.state.conferences}/>
-        <Interviews interviews={this.state.interviews}/>
+        <Interviews interviews={this.state.interviews}/> */}
       </div>
     )
   }
