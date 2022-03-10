@@ -1,6 +1,7 @@
 import './App.css';
 import Conferences from './Conferences.js'
 import JobApps from './JobApps.js';
+import Interviews from './Interviews.js';
 import React, { Component } from 'react';
 
 export default class App extends Component {
@@ -9,7 +10,8 @@ export default class App extends Component {
     this.state = {
       baseURL: 'http://localhost:3003',
       conferences: [],
-      jobs: []
+      jobs: [],
+      interviews: []
     }
   }
 
@@ -49,9 +51,28 @@ export default class App extends Component {
     })
   }
 
+  getInterviews = () => {
+    fetch(this.state.baseURL + '/interviews')
+    .then (response => {
+      console.log(response)
+      if (response.status === 200) {
+        return response.json()
+      } else {
+        return []
+      }
+    })
+    .then(body => {
+      console.log(body)
+      this.setState({
+        interviews: body
+      })
+    })
+  }
+
   componentDidMount() {
     this.getJobs()
     this.getConferences()
+    this.getInterviews()
   }
 
   render() {
@@ -62,6 +83,7 @@ export default class App extends Component {
         </header>
         <JobApps jobs={this.state.jobs} />
         <Conferences conferences={this.state.conferences}/>
+        <Interviews interviews={this.state.interviews}/>
       </div>
     )
   }
