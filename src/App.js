@@ -79,24 +79,24 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1> Job Tracker </h1>
+        <h1> Job Tracker v.2 with Nav </h1>
         <nav
           style ={{
             borderBottom: 'solid 1px',
             paddingBottom: '1rem',
           }}
         >
-          <Link to='/conferences' conferences={this.state.conferences}>Conferences</Link> | {" "}
-          <Link to='/interviews' interviews={this.state.interviews}>Interviews</Link> | {" "}
-          <Link to='/jobs' jobs={this.state.jobs}>Jobs</Link>
+          <Link to='/conferences'>Conferences</Link> | {" "}
+          <Link to='/interviews'>Interviews</Link> | {" "}
+          <Link to='/jobs'>Jobs</Link>
         </nav>
         <Outlet />
-        {/* <header className="App-header">
+        <header className="App-header">
           <h1>Job Tracker</h1>
         </header>
         <JobApps jobs={this.state.jobs} />
         <Conferences conferences={this.state.conferences}/>
-        <Interviews interviews={this.state.interviews}/> */}
+        <Interviews interviews={this.state.interviews}/>
       </div>
     )
   }
