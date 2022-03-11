@@ -1,7 +1,7 @@
 import React from 'react';
 import NewJob from './NewJob';
 
-export default function JobAp (props) {
+export default function JobApps (props) {
     return (
         <React.Fragment>
             <h2>Applied to Jobs</h2>
